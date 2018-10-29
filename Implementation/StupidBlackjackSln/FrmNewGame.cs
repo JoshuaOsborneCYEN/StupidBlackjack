@@ -68,5 +68,5 @@ namespace StupidBlackjackSln {
     {
         System.Diagnostics.Process.Start("IExplore", "https://www.ncpgambling.org/help-treatment/help-by-state/");
     }
-  }
+    }
 }

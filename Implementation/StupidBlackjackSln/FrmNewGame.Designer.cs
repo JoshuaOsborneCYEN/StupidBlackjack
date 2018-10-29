@@ -134,6 +134,7 @@
             this.llblHotline.TabIndex = 8;
             this.llblHotline.TabStop = true;
             this.llblHotline.Text = "Gambling problem? Click here or call 1-800-522-4700 for help.";
+            this.llblHotline.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblHotline_LinkClicked);
             // 
             // FrmNewGame
             // 
