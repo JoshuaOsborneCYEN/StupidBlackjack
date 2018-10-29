@@ -28,7 +28,7 @@
             this.btnRulebook = new System.Windows.Forms.Button();
             this.btnExitGame = new System.Windows.Forms.Button();
             this.btnOptions = new System.Windows.Forms.Button();
-            this.lblHotline = new System.Windows.Forms.Label();
+            this.llblHotline = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -91,18 +91,18 @@
             this.btnOptions.Text = "Options";
             this.btnOptions.UseVisualStyleBackColor = true;
             // 
-            // lblHotline
+            // llblHotline
             // 
-            this.lblHotline.AutoSize = true;
-            this.lblHotline.BackColor = System.Drawing.Color.Transparent;
-            this.lblHotline.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHotline.ForeColor = System.Drawing.Color.Red;
-            this.lblHotline.Location = new System.Drawing.Point(720, 514);
-            this.lblHotline.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHotline.Name = "lblHotline";
-            this.lblHotline.Size = new System.Drawing.Size(538, 31);
-            this.lblHotline.TabIndex = 5;
-            this.lblHotline.Text = "Gambling problem? Call 1-800-522-4700";
+            this.llblHotline.AutoSize = true;
+            this.llblHotline.BackColor = System.Drawing.Color.Transparent;
+            this.llblHotline.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.llblHotline.Location = new System.Drawing.Point(843, 516);
+            this.llblHotline.Name = "llblHotline";
+            this.llblHotline.Size = new System.Drawing.Size(402, 17);
+            this.llblHotline.TabIndex = 5;
+            this.llblHotline.TabStop = true;
+            this.llblHotline.Text = "Gambling problem? Click here or call 1-800-522-4700 for help.";
+            this.llblHotline.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblHotline_LinkClicked);
             // 
             // frmTitle
             // 
@@ -111,7 +111,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.BackgroundImage = global::StupidBlackjackSln.Properties.Resources.table_texture;
             this.ClientSize = new System.Drawing.Size(1271, 554);
-            this.Controls.Add(this.lblHotline);
+            this.Controls.Add(this.llblHotline);
             this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.btnExitGame);
             this.Controls.Add(this.btnRulebook);
@@ -133,7 +133,7 @@
     private System.Windows.Forms.Button btnRulebook;
     private System.Windows.Forms.Button btnExitGame;
     private System.Windows.Forms.Button btnOptions;
-    private System.Windows.Forms.Label lblHotline;
+        private System.Windows.Forms.LinkLabel llblHotline;
     }
 }
 
