@@ -31,7 +31,7 @@
             this.btnHit = new System.Windows.Forms.Button();
             this.btnStand = new System.Windows.Forms.Button();
             this.lblPlayerScore = new System.Windows.Forms.Label();
-            this.lblHotline = new System.Windows.Forms.Label();
+            this.llblHotline = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerCard3)).BeginInit();
@@ -123,25 +123,24 @@
             this.lblPlayerScore.TabIndex = 7;
             this.lblPlayerScore.Text = "label1";
             // 
-            // lblHotline
+            // llblHotline
             // 
-            this.lblHotline.AutoSize = true;
-            this.lblHotline.BackColor = System.Drawing.Color.Transparent;
-            this.lblHotline.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHotline.ForeColor = System.Drawing.Color.Red;
-            this.lblHotline.Location = new System.Drawing.Point(522, 514);
-            this.lblHotline.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHotline.Name = "lblHotline";
-            this.lblHotline.Size = new System.Drawing.Size(538, 31);
-            this.lblHotline.TabIndex = 8;
-            this.lblHotline.Text = "Gambling problem? Call 1-800-522-4700";
+            this.llblHotline.AutoSize = true;
+            this.llblHotline.BackColor = System.Drawing.Color.Transparent;
+            this.llblHotline.LinkColor = System.Drawing.Color.Red;
+            this.llblHotline.Location = new System.Drawing.Point(646, 528);
+            this.llblHotline.Name = "llblHotline";
+            this.llblHotline.Size = new System.Drawing.Size(402, 17);
+            this.llblHotline.TabIndex = 8;
+            this.llblHotline.TabStop = true;
+            this.llblHotline.Text = "Gambling problem? Click here or call 1-800-522-4700 for help.";
             // 
             // FrmNewGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.lblHotline);
+            this.Controls.Add(this.llblHotline);
             this.Controls.Add(this.lblPlayerScore);
             this.Controls.Add(this.btnStand);
             this.Controls.Add(this.btnHit);
@@ -175,6 +174,6 @@
     private System.Windows.Forms.Button btnHit;
     private System.Windows.Forms.Button btnStand;
     private System.Windows.Forms.Label lblPlayerScore;
-    private System.Windows.Forms.Label lblHotline;
+        private System.Windows.Forms.LinkLabel llblHotline;
     }
 }
