@@ -133,7 +133,7 @@
     private System.Windows.Forms.Button btnRulebook;
     private System.Windows.Forms.Button btnExitGame;
     private System.Windows.Forms.Button btnOptions;
-        private System.Windows.Forms.LinkLabel llblHotline;
+    private System.Windows.Forms.LinkLabel llblHotline;
     }
 }
 
