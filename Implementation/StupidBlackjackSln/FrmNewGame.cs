@@ -63,5 +63,10 @@ namespace StupidBlackjackSln {
 
       return (Bitmap)Resources.ResourceManager.GetObject(textName);
     }
+    
+    private void llblHotline_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+        System.Diagnostics.Process.Start("IExplore", "https://www.ncpgambling.org/help-treatment/help-by-state/");
+    }
   }
 }
