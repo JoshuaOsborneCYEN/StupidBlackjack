@@ -174,6 +174,6 @@
     private System.Windows.Forms.Button btnHit;
     private System.Windows.Forms.Button btnStand;
     private System.Windows.Forms.Label lblPlayerScore;
-        private System.Windows.Forms.LinkLabel llblHotline;
+    private System.Windows.Forms.LinkLabel llblHotline;
     }
 }
