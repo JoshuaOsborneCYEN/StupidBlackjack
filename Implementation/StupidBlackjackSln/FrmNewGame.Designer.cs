@@ -151,7 +151,6 @@
             this.label1.Size = new System.Drawing.Size(124, 20);
             this.label1.TabIndex = 9;
             this.label1.Text = "Current Money:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblMoney
             // 
@@ -200,6 +199,7 @@
             this.btnMakeBet.TabIndex = 14;
             this.btnMakeBet.Text = "Bet";
             this.btnMakeBet.UseVisualStyleBackColor = true;
+            this.btnMakeBet.Click += new System.EventHandler(this.btnMakeBet_Click);
             // 
             // FrmNewGame
             // 
