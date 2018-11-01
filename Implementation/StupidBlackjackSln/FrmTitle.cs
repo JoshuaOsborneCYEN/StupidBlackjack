@@ -49,7 +49,7 @@ namespace StupidBlackjackSln {
 
         private void f_QuitGame(object sender, EventArgs e)
         {
-      this.Show();
+          this.Show();
         }
 
     }
