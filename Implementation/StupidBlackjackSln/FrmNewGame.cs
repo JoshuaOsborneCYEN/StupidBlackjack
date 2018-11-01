@@ -13,7 +13,7 @@ using System.Windows.Forms;
 namespace StupidBlackjackSln {
   public partial class FrmNewGame : Form {
     private Deck deck;
-    private Player player1;
+    private BlackjackPlayer player1;
     private PictureBox[] picPlayerCards;
 
     public FrmNewGame() {
@@ -27,6 +27,8 @@ namespace StupidBlackjackSln {
     private void FrmNewGame_Load(object sender, EventArgs e) {
       deck = new Deck(FindBitmap);
       player1 = new BlackjackPlayer();
+      // add listener
+      player1.scoreUpdated += p_ScoreUpdated;
       
       player1.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
       showHand();
@@ -68,5 +70,10 @@ namespace StupidBlackjackSln {
     {
         System.Diagnostics.Process.Start("IExplore", "https://www.ncpgambling.org/help-treatment/help-by-state/");
     }
+
+    private void p_ScoreUpdated(object sender, EventArgs e)
+    {
+      lblHandValue.Text = "Hand Value: " + this.player1.Score.ToString();
     }
+  }
 }

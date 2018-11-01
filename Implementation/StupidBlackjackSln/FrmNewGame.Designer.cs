@@ -32,6 +32,7 @@
             this.btnStand = new System.Windows.Forms.Button();
             this.lblPlayerScore = new System.Windows.Forms.Label();
             this.llblHotline = new System.Windows.Forms.LinkLabel();
+            this.lblHandValue = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerCard3)).BeginInit();
@@ -42,60 +43,54 @@
             // picPlayerCard1
             // 
             this.picPlayerCard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPlayerCard1.Location = new System.Drawing.Point(149, 298);
-            this.picPlayerCard1.Margin = new System.Windows.Forms.Padding(4);
+            this.picPlayerCard1.Location = new System.Drawing.Point(112, 242);
             this.picPlayerCard1.Name = "picPlayerCard1";
-            this.picPlayerCard1.Size = new System.Drawing.Size(141, 177);
+            this.picPlayerCard1.Size = new System.Drawing.Size(106, 144);
             this.picPlayerCard1.TabIndex = 0;
             this.picPlayerCard1.TabStop = false;
             // 
             // picPlayerCard2
             // 
             this.picPlayerCard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPlayerCard2.Location = new System.Drawing.Point(339, 298);
-            this.picPlayerCard2.Margin = new System.Windows.Forms.Padding(4);
+            this.picPlayerCard2.Location = new System.Drawing.Point(254, 242);
             this.picPlayerCard2.Name = "picPlayerCard2";
-            this.picPlayerCard2.Size = new System.Drawing.Size(141, 177);
+            this.picPlayerCard2.Size = new System.Drawing.Size(106, 144);
             this.picPlayerCard2.TabIndex = 1;
             this.picPlayerCard2.TabStop = false;
             // 
             // picPlayerCard3
             // 
             this.picPlayerCard3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPlayerCard3.Location = new System.Drawing.Point(528, 298);
-            this.picPlayerCard3.Margin = new System.Windows.Forms.Padding(4);
+            this.picPlayerCard3.Location = new System.Drawing.Point(396, 242);
             this.picPlayerCard3.Name = "picPlayerCard3";
-            this.picPlayerCard3.Size = new System.Drawing.Size(141, 177);
+            this.picPlayerCard3.Size = new System.Drawing.Size(106, 144);
             this.picPlayerCard3.TabIndex = 2;
             this.picPlayerCard3.TabStop = false;
             // 
             // picPlayerCard4
             // 
             this.picPlayerCard4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPlayerCard4.Location = new System.Drawing.Point(717, 298);
-            this.picPlayerCard4.Margin = new System.Windows.Forms.Padding(4);
+            this.picPlayerCard4.Location = new System.Drawing.Point(538, 242);
             this.picPlayerCard4.Name = "picPlayerCard4";
-            this.picPlayerCard4.Size = new System.Drawing.Size(141, 177);
+            this.picPlayerCard4.Size = new System.Drawing.Size(106, 144);
             this.picPlayerCard4.TabIndex = 3;
             this.picPlayerCard4.TabStop = false;
             // 
             // picPlayerCard5
             // 
             this.picPlayerCard5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPlayerCard5.Location = new System.Drawing.Point(907, 298);
-            this.picPlayerCard5.Margin = new System.Windows.Forms.Padding(4);
+            this.picPlayerCard5.Location = new System.Drawing.Point(680, 242);
             this.picPlayerCard5.Name = "picPlayerCard5";
-            this.picPlayerCard5.Size = new System.Drawing.Size(141, 177);
+            this.picPlayerCard5.Size = new System.Drawing.Size(106, 144);
             this.picPlayerCard5.TabIndex = 4;
             this.picPlayerCard5.TabStop = false;
             // 
             // btnHit
             // 
             this.btnHit.AutoSize = true;
-            this.btnHit.Location = new System.Drawing.Point(171, 228);
-            this.btnHit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHit.Location = new System.Drawing.Point(128, 185);
             this.btnHit.Name = "btnHit";
-            this.btnHit.Size = new System.Drawing.Size(40, 28);
+            this.btnHit.Size = new System.Drawing.Size(30, 23);
             this.btnHit.TabIndex = 5;
             this.btnHit.Text = "Hit";
             this.btnHit.UseVisualStyleBackColor = true;
@@ -104,10 +99,9 @@
             // btnStand
             // 
             this.btnStand.AutoSize = true;
-            this.btnStand.Location = new System.Drawing.Point(283, 228);
-            this.btnStand.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStand.Location = new System.Drawing.Point(212, 185);
             this.btnStand.Name = "btnStand";
-            this.btnStand.Size = new System.Drawing.Size(71, 28);
+            this.btnStand.Size = new System.Drawing.Size(53, 23);
             this.btnStand.TabIndex = 6;
             this.btnStand.Text = "Stand";
             this.btnStand.UseVisualStyleBackColor = true;
@@ -116,10 +110,9 @@
             // 
             this.lblPlayerScore.AutoSize = true;
             this.lblPlayerScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayerScore.Location = new System.Drawing.Point(580, 199);
-            this.lblPlayerScore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPlayerScore.Location = new System.Drawing.Point(435, 162);
             this.lblPlayerScore.Name = "lblPlayerScore";
-            this.lblPlayerScore.Size = new System.Drawing.Size(132, 46);
+            this.lblPlayerScore.Size = new System.Drawing.Size(106, 37);
             this.lblPlayerScore.TabIndex = 7;
             this.lblPlayerScore.Text = "label1";
             // 
@@ -128,19 +121,32 @@
             this.llblHotline.AutoSize = true;
             this.llblHotline.BackColor = System.Drawing.Color.Transparent;
             this.llblHotline.LinkColor = System.Drawing.Color.Red;
-            this.llblHotline.Location = new System.Drawing.Point(646, 528);
+            this.llblHotline.Location = new System.Drawing.Point(484, 429);
+            this.llblHotline.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.llblHotline.Name = "llblHotline";
-            this.llblHotline.Size = new System.Drawing.Size(402, 17);
+            this.llblHotline.Size = new System.Drawing.Size(297, 13);
             this.llblHotline.TabIndex = 8;
             this.llblHotline.TabStop = true;
             this.llblHotline.Text = "Gambling problem? Click here or call 1-800-522-4700 for help.";
             this.llblHotline.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblHotline_LinkClicked);
             // 
+            // lblHandValue
+            // 
+            this.lblHandValue.AutoSize = true;
+            this.lblHandValue.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.lblHandValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHandValue.Location = new System.Drawing.Point(590, 9);
+            this.lblHandValue.Name = "lblHandValue";
+            this.lblHandValue.Size = new System.Drawing.Size(198, 31);
+            this.lblHandValue.TabIndex = 9;
+            this.lblHandValue.Text = "Hand Value: 0";
+            // 
             // FrmNewGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblHandValue);
             this.Controls.Add(this.llblHotline);
             this.Controls.Add(this.lblPlayerScore);
             this.Controls.Add(this.btnStand);
@@ -150,7 +156,6 @@
             this.Controls.Add(this.picPlayerCard3);
             this.Controls.Add(this.picPlayerCard2);
             this.Controls.Add(this.picPlayerCard1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmNewGame";
             this.Text = "FrmNewGame";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmNewGame_FormClosed);
@@ -176,5 +181,6 @@
     private System.Windows.Forms.Button btnStand;
     private System.Windows.Forms.Label lblPlayerScore;
     private System.Windows.Forms.LinkLabel llblHotline;
+        private System.Windows.Forms.Label lblHandValue;
     }
 }
