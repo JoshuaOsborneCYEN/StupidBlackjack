@@ -37,6 +37,7 @@ namespace StupidBlackjackSln.Code
             Score = 0;
             Money = 0;
             Bet = 0;
+            Hand = new List<Card>();
         }
 
         public void giveHand(List<Card> initHand)
