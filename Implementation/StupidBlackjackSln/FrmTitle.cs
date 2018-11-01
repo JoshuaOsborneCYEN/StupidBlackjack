@@ -38,6 +38,7 @@ namespace StupidBlackjackSln {
         {
             FrmNewGame frmNewGame = new FrmNewGame();
             frmNewGame.Show();
+            frmNewGame.quitGame += f_QuitGame;
             this.Hide();
         }
 
@@ -45,5 +46,11 @@ namespace StupidBlackjackSln {
         {
             System.Diagnostics.Process.Start("IExplore", "https://www.ncpgambling.org/help-treatment/help-by-state/");
         }
+
+        private void f_QuitGame(object sender, EventArgs e)
+        {
+      this.Show();
+        }
+
     }
 }

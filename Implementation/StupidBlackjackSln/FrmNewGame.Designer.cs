@@ -110,11 +110,13 @@
       // 
       this.lblPlayerScore.AutoSize = true;
       this.lblPlayerScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblPlayerScore.Location = new System.Drawing.Point(435, 162);
+      this.lblPlayerScore.ForeColor = System.Drawing.Color.Black;
+      this.lblPlayerScore.Location = new System.Drawing.Point(11, 40);
       this.lblPlayerScore.Name = "lblPlayerScore";
       this.lblPlayerScore.Size = new System.Drawing.Size(106, 37);
       this.lblPlayerScore.TabIndex = 7;
       this.lblPlayerScore.Text = "label1";
+      this.lblPlayerScore.Visible = false;
       // 
       // llblHotline
       // 

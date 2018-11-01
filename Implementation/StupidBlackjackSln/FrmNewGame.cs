@@ -16,6 +16,8 @@ namespace StupidBlackjackSln {
     private BlackjackPlayer player1;
     private PictureBox[] picPlayerCards;
 
+    public event EventHandler quitGame;
+
     public FrmNewGame() {
       InitializeComponent();
       picPlayerCards = new PictureBox[5];
@@ -38,13 +40,12 @@ namespace StupidBlackjackSln {
       for (int i = 0; i < player1.Hand.Count(); i++) {
         picPlayerCards[i].BackgroundImage = player1.Hand[i].Bitmap;
       }
+      // redundant, I added code in an event that accomplishes this.
       lblPlayerScore.Text = player1.Score.ToString();
     }
 
     private void FrmNewGame_FormClosed(object sender, FormClosedEventArgs e) {
-      foreach (Form f in Application.OpenForms) {
-        f.Close();
-      }
+      //
     }
 
     private void btnHit_Click(object sender, EventArgs e) {
@@ -78,8 +79,20 @@ namespace StupidBlackjackSln {
       }
       else {
         lblHandValue.Text = "Bust!";
-
+        DialogResult result = MessageBox.Show("Do you want to play again?", "New game?", MessageBoxButtons.YesNo, MessageBoxIcon.None);
+        if (result == DialogResult.Yes)
+          ResetGame();
+        else
+        {
+          quitGame?.Invoke(this, EventArgs.Empty);
+          this.Close();
+        }
       }
+    }
+
+    private void ResetGame()
+    {
+      throw new NotImplementedException();
     }
   }
 }
