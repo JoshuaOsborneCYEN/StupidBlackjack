@@ -73,7 +73,13 @@ namespace StupidBlackjackSln {
 
     private void p_ScoreUpdated(object sender, EventArgs e)
     {
-      lblHandValue.Text = "Hand Value: " + this.player1.Score.ToString();
+      if (player1.Score <= 21) {
+        lblHandValue.Text = "Hand Value: " + player1.Score.ToString();
+      }
+      else {
+        lblHandValue.Text = "Bust!";
+
+      }
     }
   }
 }
