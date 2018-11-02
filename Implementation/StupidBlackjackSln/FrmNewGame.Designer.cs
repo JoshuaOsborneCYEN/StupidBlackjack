@@ -32,6 +32,12 @@
             this.btnStand = new System.Windows.Forms.Button();
             this.lblPlayerScore = new System.Windows.Forms.Label();
             this.llblHotline = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblMoney = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblBetPool = new System.Windows.Forms.Label();
+            this.txtbxBetAmount = new System.Windows.Forms.TextBox();
+            this.btnMakeBet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerCard3)).BeginInit();
@@ -92,10 +98,10 @@
             // btnHit
             // 
             this.btnHit.AutoSize = true;
-            this.btnHit.Location = new System.Drawing.Point(171, 228);
+            this.btnHit.Location = new System.Drawing.Point(149, 228);
             this.btnHit.Margin = new System.Windows.Forms.Padding(4);
             this.btnHit.Name = "btnHit";
-            this.btnHit.Size = new System.Drawing.Size(40, 28);
+            this.btnHit.Size = new System.Drawing.Size(62, 28);
             this.btnHit.TabIndex = 5;
             this.btnHit.Text = "Hit";
             this.btnHit.UseVisualStyleBackColor = true;
@@ -104,7 +110,7 @@
             // btnStand
             // 
             this.btnStand.AutoSize = true;
-            this.btnStand.Location = new System.Drawing.Point(283, 228);
+            this.btnStand.Location = new System.Drawing.Point(219, 228);
             this.btnStand.Margin = new System.Windows.Forms.Padding(4);
             this.btnStand.Name = "btnStand";
             this.btnStand.Size = new System.Drawing.Size(71, 28);
@@ -116,7 +122,7 @@
             // 
             this.lblPlayerScore.AutoSize = true;
             this.lblPlayerScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayerScore.Location = new System.Drawing.Point(580, 199);
+            this.lblPlayerScore.Location = new System.Drawing.Point(580, 9);
             this.lblPlayerScore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlayerScore.Name = "lblPlayerScore";
             this.lblPlayerScore.Size = new System.Drawing.Size(132, 46);
@@ -136,11 +142,76 @@
             this.llblHotline.Text = "Gambling problem? Click here or call 1-800-522-4700 for help.";
             this.llblHotline.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblHotline_LinkClicked);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.Location = new System.Drawing.Point(27, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(124, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Current Money:";
+            // 
+            // lblMoney
+            // 
+            this.lblMoney.AutoSize = true;
+            this.lblMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblMoney.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblMoney.Location = new System.Drawing.Point(158, 9);
+            this.lblMoney.Name = "lblMoney";
+            this.lblMoney.Size = new System.Drawing.Size(53, 20);
+            this.lblMoney.TabIndex = 10;
+            this.lblMoney.Text = "label2";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.Location = new System.Drawing.Point(12, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(139, 20);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Current Bet Pool:";
+            // 
+            // lblBetPool
+            // 
+            this.lblBetPool.AutoSize = true;
+            this.lblBetPool.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblBetPool.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblBetPool.Location = new System.Drawing.Point(158, 38);
+            this.lblBetPool.Name = "lblBetPool";
+            this.lblBetPool.Size = new System.Drawing.Size(85, 20);
+            this.lblBetPool.TabIndex = 12;
+            this.lblBetPool.Text = "lblBetPool";
+            // 
+            // txtbxBetAmount
+            // 
+            this.txtbxBetAmount.Location = new System.Drawing.Point(578, 134);
+            this.txtbxBetAmount.Name = "txtbxBetAmount";
+            this.txtbxBetAmount.Size = new System.Drawing.Size(100, 22);
+            this.txtbxBetAmount.TabIndex = 13;
+            // 
+            // btnMakeBet
+            // 
+            this.btnMakeBet.Location = new System.Drawing.Point(610, 162);
+            this.btnMakeBet.Name = "btnMakeBet";
+            this.btnMakeBet.Size = new System.Drawing.Size(49, 23);
+            this.btnMakeBet.TabIndex = 14;
+            this.btnMakeBet.Text = "Bet";
+            this.btnMakeBet.UseVisualStyleBackColor = true;
+            this.btnMakeBet.Click += new System.EventHandler(this.btnMakeBet_Click);
+            // 
             // FrmNewGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnMakeBet);
+            this.Controls.Add(this.txtbxBetAmount);
+            this.Controls.Add(this.lblBetPool);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblMoney);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.llblHotline);
             this.Controls.Add(this.lblPlayerScore);
             this.Controls.Add(this.btnStand);
@@ -176,5 +247,11 @@
     private System.Windows.Forms.Button btnStand;
     private System.Windows.Forms.Label lblPlayerScore;
     private System.Windows.Forms.LinkLabel llblHotline;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMoney;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblBetPool;
+        private System.Windows.Forms.TextBox txtbxBetAmount;
+        private System.Windows.Forms.Button btnMakeBet;
     }
 }
