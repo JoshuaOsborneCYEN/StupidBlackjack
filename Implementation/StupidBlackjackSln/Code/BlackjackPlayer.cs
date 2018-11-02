@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace StupidBlackjackSln.Code {
   class BlackjackPlayer : Player {
+
+    public event EventHandler scoreUpdated;
+    
     protected override void calcScore() {
       this.Score = 0;
       int numAces = 0;
@@ -37,6 +40,9 @@ namespace StupidBlackjackSln.Code {
           break;
         }
       }
+      // invoke event that form can listen for
+      scoreUpdated?.Invoke(this, EventArgs.Empty);
+
     }
   }
 }

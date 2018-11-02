@@ -15,8 +15,10 @@ namespace StupidBlackjackSln
     public partial class FrmNewGame : Form
     {
         private Deck deck;
-        private Player player1;
+        private BlackjackPlayer player1;
         private PictureBox[] picPlayerCards;
+        
+        public event EventHandler quitGame;
 
         public FrmNewGame()
         {
@@ -32,6 +34,9 @@ namespace StupidBlackjackSln
         {
             deck = new Deck(FindBitmap);
             player1 = new BlackjackPlayer();
+            // add listener
+            player1.scoreUpdated += p_ScoreUpdated;
+            // add betting money
             player1.giveMoney(1000);
             updateGUI();
             startBetting();
@@ -68,6 +73,10 @@ namespace StupidBlackjackSln
             {
                 picPlayerCards[i].BackgroundImage = player1.Hand[i].Bitmap;
             }
+            for (int i = player1.Hand.Count(); i < picPlayerCards.Length; i++)
+            {
+                picPlayerCards[i].BackgroundImage = null;
+            }
             lblPlayerScore.Text = player1.Score.ToString();
             lblMoney.Text = player1.Money.ToString();
             lblBetPool.Text = player1.Bet.ToString();
@@ -76,10 +85,7 @@ namespace StupidBlackjackSln
 
         private void FrmNewGame_FormClosed(object sender, FormClosedEventArgs e)
         {
-            foreach (Form f in Application.OpenForms)
-            {
-                f.Close();
-            }
+            quitGame?.Invoke(this, EventArgs.Empty);
         }
 
         private void btnHit_Click(object sender, EventArgs e)
@@ -87,6 +93,7 @@ namespace StupidBlackjackSln
             player1.giveCard(deck.dealCard());
             updateGUI();
         }
+
 
         private Bitmap FindBitmap(string value, string suit)
         {
@@ -113,5 +120,34 @@ namespace StupidBlackjackSln
         {
             finishBetting();
         }
+        
+        private void ResetGame()
+        {
+            deck = new Deck(FindBitmap);
+            player1.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
+            updateGUI();
+        }
+        
+        private void p_ScoreUpdated(object sender, EventArgs e)
+        {
+            if (player1.Score <= 21)
+            {
+                lblHandValue.Text = "Hand Value: " + player1.Score.ToString();
+            }
+            else 
+            {
+                lblHandValue.Text = "Bust!";
+                updateGUI();
+                DialogResult result = MessageBox.Show("Do you want to play again?", "New game?", MessageBoxButtons.YesNo, MessageBoxIcon.None);
+                if (result == DialogResult.Yes)
+                    ResetGame();
+                else
+                {
+                  quitGame?.Invoke(this, EventArgs.Empty);
+                  this.Close();
+                }
+            }
+        }
     }
 }
+
