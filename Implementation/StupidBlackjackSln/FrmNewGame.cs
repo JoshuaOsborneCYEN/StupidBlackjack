@@ -137,7 +137,7 @@ namespace StupidBlackjackSln
             else 
             {
                 lblHandValue.Text = "Bust!";
-                showHand();
+                updateGUI();
                 DialogResult result = MessageBox.Show("Do you want to play again?", "New game?", MessageBoxButtons.YesNo, MessageBoxIcon.None);
                 if (result == DialogResult.Yes)
                     ResetGame();
@@ -149,5 +149,5 @@ namespace StupidBlackjackSln
             }
         }
     }
-  }
 }
+
