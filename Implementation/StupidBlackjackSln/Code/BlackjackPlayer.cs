@@ -8,7 +8,14 @@ namespace StupidBlackjackSln.Code {
   class BlackjackPlayer : Player {
 
     public event EventHandler scoreUpdated;
-    
+        public int winstreak
+        {
+            get;
+            set;
+        }
+
+
+
     protected override void calcScore() {
       this.Score = 0;
       int numAces = 0;
@@ -42,7 +49,6 @@ namespace StupidBlackjackSln.Code {
       }
       // invoke event that form can listen for
       scoreUpdated?.Invoke(this, EventArgs.Empty);
-
     }
   }
 }
