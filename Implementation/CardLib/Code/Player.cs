@@ -59,7 +59,7 @@ namespace StupidBlackjackSln.Code
 
         public bool makeBet(int bet)
         {
-            if (Money - bet >= 0)
+            if (Money - bet >= 0 && bet >= 0)
             {
                 Money = Money - bet;
                 Bet = bet;
@@ -72,6 +72,11 @@ namespace StupidBlackjackSln.Code
         }
 
         public void winBet()
+        {
+            Money = Money + 2*Bet;
+            Bet = 0;
+        }
+        public void tieBet()
         {
             Money = Money + Bet;
             Bet = 0;
