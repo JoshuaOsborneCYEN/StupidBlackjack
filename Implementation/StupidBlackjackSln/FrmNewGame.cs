@@ -107,7 +107,6 @@ namespace StupidBlackjackSln
 
         private bool checkBlackjack(BlackjackPlayer p)
         {
-            return true;
             if (p.Score == 21)
                 return true;
             else
