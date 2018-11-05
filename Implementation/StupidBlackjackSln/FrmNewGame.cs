@@ -19,6 +19,7 @@ namespace StupidBlackjackSln
         private BlackjackPlayer dealer;
         private PictureBox[] picPlayerCards;
         private PictureBox[] picDealerCards;
+        private int wager;
         
         public event EventHandler quitGame;
 
@@ -73,6 +74,8 @@ namespace StupidBlackjackSln
             {
                 if(player1.makeBet(betAmount))
                 {
+                    // store total wager in form
+                    this.wager = betAmount;
                     //basic setup
                     btnMakeBet.Enabled = false;
                     btnMakeBet.Visible = false;
