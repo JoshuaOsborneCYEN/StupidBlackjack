@@ -207,6 +207,8 @@ namespace StupidBlackjackSln
 
         private void btnStand_Click(object sender, EventArgs e)
         {
+            btnHit.Enabled = false; // temporarily disable buttons during dealer's turn
+            btnStand.Enabled = false;
             dealerTurn();
         }
 
