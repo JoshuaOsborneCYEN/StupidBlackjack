@@ -61,6 +61,7 @@ namespace StupidBlackjackSln
 
             btnHit.Enabled = false;
             btnStand.Enabled = false;
+            btnSurrender.Enabled = false;
         }
 
         /// <summary>
@@ -92,13 +93,15 @@ namespace StupidBlackjackSln
                     }
                     else
                     {
+                        // enable player options
                         btnHit.Enabled = true;
                         btnStand.Enabled = true;
+                        btnSurrender.Enabled = true;
                         if(checkBlackjack(dealer))
                         {
                             updateDealerGUI(true);
                             lblDealerScore.Text = "BLACKJACK!";
-                            GameOver(2);
+                            GameOver(EndType.Lose);
                         }
                     }
                 }
@@ -140,6 +143,7 @@ namespace StupidBlackjackSln
 
         private void btnHit_Click(object sender, EventArgs e)
         {
+            btnSurrender.Enabled = false;
             player1.giveCard(deck.dealCard());
             updateGUI();
         }
@@ -199,7 +203,7 @@ namespace StupidBlackjackSln
             {
                 lblHandValue.Text = "Bust!";
                 updateGUI();
-                GameOver(2);
+                GameOver(EndType.Lose);
             }
         }
 
@@ -209,6 +213,7 @@ namespace StupidBlackjackSln
         {
             btnHit.Enabled = false; // temporarily disable buttons during dealer's turn
             btnStand.Enabled = false;
+            btnSurrender.Enabled = false;
             dealerTurn();
         }
 
@@ -235,23 +240,23 @@ namespace StupidBlackjackSln
             {
                 lblDealerScore.Text = "BUSTED";
                 lblPlayerScore.Text = "YOU WIN";
-                GameOver(0);
+                GameOver(EndType.Win);
             }
             else if (dealer.Score == player1.Score)
             {
                 lblDealerScore.Text = "It's a tie";
                 lblPlayerScore.Text = "It's a tie";
-                GameOver(1);
+                GameOver(EndType.Tie);
             }
             else if(dealer.Score < player1.Score)
             {
                 lblPlayerScore.Text = "YOU WIN";
-                GameOver(0);
+                GameOver(EndType.Win);
             }
             else
             {
                 lblPlayerScore.Text = "YOU LOSE";
-                GameOver(2);
+                GameOver(EndType.Lose);
             }
         }
 
@@ -301,21 +306,27 @@ namespace StupidBlackjackSln
         /// win = 0 means a win, win = 1 means a tie, win = anything else means a loss
         /// </summary>
         /// <param name="win"></param>
-        private void GameOver(int win)
+        private void GameOver(EndType win)
         {
-            if (win == 0)
+            if (win == EndType.Win) // 0
             {
                 player1.winBet();
                 player1.winstreak += 1;
                 lblHandValue.Text = "WINNER";
             }
-            else if (win == 1)
+            else if (win == EndType.Tie) // 1
             {
                 player1.tieBet();
                 player1.winstreak = 0;
                 lblHandValue.Text = "Tie";
             }
-            else
+            else if (win == EndType.Surrender)
+            {
+                player1.Surrender();
+                player1.winstreak = 0;
+                lblHandValue.Text = "Surrender";
+            }
+            else // 2
             {
                 player1.loseBet();
                 player1.winstreak = 0;
@@ -346,14 +357,29 @@ namespace StupidBlackjackSln
             {
                 updateDealerGUI(true);
                 lblDealerScore.Text = "BLACKJACK!";
-                GameOver(1);
+                GameOver(EndType.Lose);
             }
             else
             {
                 updateDealerGUI(true);
-                GameOver(0);
+                GameOver(EndType.Win);
             }
         }
+
+        private void btnSurrender_Click(object sender, EventArgs e)
+        {
+            GameOver(EndType.Surrender);
+        }
+
     }
+
+    public enum EndType
+    {
+        Win,
+        Tie,
+        Lose,
+        Surrender
+    }
+
 }
 

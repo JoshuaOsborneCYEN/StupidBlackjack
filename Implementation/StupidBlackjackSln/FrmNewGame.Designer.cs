@@ -315,6 +315,7 @@
             this.btnSurrender.TabIndex = 23;
             this.btnSurrender.Text = "Surrender";
             this.btnSurrender.UseVisualStyleBackColor = true;
+            this.btnSurrender.Click += new System.EventHandler(this.btnSurrender_Click);
             // 
             // FrmNewGame
             // 
