@@ -291,7 +291,8 @@ namespace StupidBlackjackSln
                 if (dealer.Hand.Count() > 0)
                 {
                     picDealerCards[0].BackgroundImage = dealer.Hand[0].Bitmap;
-                    for (int i = 1; i < picDealerCards.Length; i++)
+                    picDealerCards[1].BackgroundImage = (Bitmap)Resources.ResourceManager.GetObject("cardbackred"); // facedown card
+                    for (int i = 2; i < picDealerCards.Length; i++)
                     {
                         picDealerCards[i].Visible = false;
                     }
