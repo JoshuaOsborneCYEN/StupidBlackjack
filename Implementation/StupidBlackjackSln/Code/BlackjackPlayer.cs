@@ -61,6 +61,9 @@ namespace StupidBlackjackSln.Code
             scoreUpdated?.Invoke(this, EventArgs.Empty);
         }
 
+        /// <summary>
+        /// Returns half of the player's bet to their money, and forfeits the rest.
+        /// </summary>
         public void Surrender()
         {
             int toReturn = Bet / 2;

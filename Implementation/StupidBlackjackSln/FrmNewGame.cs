@@ -193,6 +193,11 @@ namespace StupidBlackjackSln
             updateDealerGUI(false);
         }
         
+        /// <summary>
+        /// Event to keep track of player's score, update the label, and check for bust
+        /// </summary>
+        /// <param name="sender">Required parameter for events</param>
+        /// <param name="e">Arguments that could be passed to the event; also required</param>
         private void p_ScoreUpdated(object sender, EventArgs e)
         {
             if (player1.Score <= 21)
@@ -303,9 +308,9 @@ namespace StupidBlackjackSln
 
         /// <summary>
         /// Asks the player if he wants to start a new game, also handles the conclusion of betting
-        /// win = 0 means a win, win = 1 means a tie, win = anything else means a loss
+        /// win is an enum that can take the value of Win, Tie, Surrender, or Lose
         /// </summary>
-        /// <param name="win"></param>
+        /// <param name="win">Enum for end game type (Win, Tie, Surrender, Lose)</param>
         private void GameOver(EndType win)
         {
             if (win == EndType.Win) // 0
