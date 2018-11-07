@@ -40,6 +40,8 @@ namespace StupidBlackjackSln
             deck = new Deck(FindBitmap);
             player1 = new BlackjackPlayer();
             dealer = new BlackjackPlayer();
+            // start music
+            AudioManagers.PlayMusic(Resources.game_music);
             // add listener
             player1.scoreUpdated += p_ScoreUpdated;
             // add betting money
