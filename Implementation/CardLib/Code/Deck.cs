@@ -47,5 +47,16 @@ namespace StupidBlackjackSln.Code {
       cards.RemoveAt(cardIndex);
       return card;
     }
+    public Card dealCard(string cardType)
+        {
+            foreach(Card card in cards)
+            {
+                if (card.getValue().ToLower().Equals(cardType))
+                {
+                    return card;
+                }
+            }
+            return null;
+        }
   }
 }

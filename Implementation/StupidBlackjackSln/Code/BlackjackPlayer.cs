@@ -16,6 +16,11 @@ namespace StupidBlackjackSln.Code
             set;
         }
 
+        public int InsuranceBet
+        {
+            get;
+            protected set;
+        }
 
 
         protected override void calcScore()
@@ -70,5 +75,36 @@ namespace StupidBlackjackSln.Code
             Money = Money + toReturn;
             Bet = 0;
         }
+
+        public bool canMakeInsuranceBet()
+        {
+            int insuranceBet = Bet / 2;
+            if (Money - insuranceBet >= 0 && insuranceBet > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void makeInsuranceBet()
+        {
+            InsuranceBet = Bet / 2;
+            Money = Money - InsuranceBet;
+        }
+
+        public void winInsuranceBet()
+        {
+            Money = Money + InsuranceBet * 2;
+            InsuranceBet = 0;
+        }
+
+        public void loseInsuranceBet()
+        {
+            InsuranceBet = 0;
+        }
+
     }
 }

@@ -19,6 +19,7 @@ namespace StupidBlackjackSln
         private BlackjackPlayer dealer;
         private PictureBox[] picPlayerCards;
         private PictureBox[] picDealerCards;
+        private bool insuranceFlag = false;
         
         public event EventHandler quitGame;
 
@@ -67,7 +68,7 @@ namespace StupidBlackjackSln
         /// <summary>
         /// After player has input a valid bet, begin the game
         /// </summary>
-        private void finishBetting()
+        private async void finishBetting()
         {
             int betAmount;
             if(int.TryParse(txtbxBetAmount.Text, out betAmount))
@@ -81,10 +82,53 @@ namespace StupidBlackjackSln
                     txtbxBetAmount.Visible = false;
                     player1.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
                     dealer.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
+                    //player1.giveHand(new List<Card>() { deck.dealCard("ace"), deck.dealCard("jack") });
+                    //dealer.giveHand(new List<Card>() { deck.dealCard("ace"), deck.dealCard("7") });
+
                     updateGUI();
                     updateDealerGUI(false);
 
+                    if (dealer.Hand[0].getValue().ToLower().Equals("ace"))
+                    {
+                        insuranceFlag = true;
+                        lblInsurance.Visible = true;
+                        btnBuyInsurance.Enabled = true;
+                        btnBuyInsurance.Visible = true;
+                        btnSkipInsurance.Enabled = true;
+                        btnSkipInsurance.Visible = true;
+                        while(insuranceFlag)
+                        {
+                            await PutTaskDelay(100);
+                        }
+                        insuranceFlag = false;
+                        lblInsurance.Visible = false;
+                        btnBuyInsurance.Enabled = false;
+                        btnBuyInsurance.Visible = false;
+                        btnSkipInsurance.Enabled = false;
+                        btnSkipInsurance.Visible = false;
+                        updateGUI();
+                    }
+
+
                     //check BlackJacks
+                    if (checkBlackjack(dealer))
+                    {
+                        updateDealerGUI(true);
+                        lblDealerScore.Text = "BLACKJACK!";
+                        if (player1.InsuranceBet > 0)
+                        {
+                            player1.winInsuranceBet();
+                        }
+                        GameOver(EndType.Lose);
+                    }
+                    else
+                    {
+                        if (player1.InsuranceBet > 0)
+                        {
+                            player1.loseInsuranceBet();
+                        }
+                    }
+
                     if (checkBlackjack(player1))
                     {
                         //give player oppurtunity to declare own blackjack
@@ -97,12 +141,7 @@ namespace StupidBlackjackSln
                         btnHit.Enabled = true;
                         btnStand.Enabled = true;
                         btnSurrender.Enabled = true;
-                        if(checkBlackjack(dealer))
-                        {
-                            updateDealerGUI(true);
-                            lblDealerScore.Text = "BLACKJACK!";
-                            GameOver(EndType.Lose);
-                        }
+                     
                     }
                 }
             }
@@ -232,7 +271,7 @@ namespace StupidBlackjackSln
 
             await PutTaskDelay(500);
             updateDealerGUI(true);
-            
+
             //hit when score below 17
             while (dealer.Score < 17)
             {
@@ -314,6 +353,7 @@ namespace StupidBlackjackSln
         /// <param name="win">Enum for end game type (Win, Tie, Surrender, Lose)</param>
         private void GameOver(EndType win)
         {
+            
             if (win == EndType.Win) // 0
             {
                 player1.winBet();
@@ -363,10 +403,14 @@ namespace StupidBlackjackSln
             {
                 updateDealerGUI(true);
                 lblDealerScore.Text = "BLACKJACK!";
+                if (player1.InsuranceBet > 0)
+                {
+                    player1.winInsuranceBet();
+                }
                 GameOver(EndType.Lose);
             }
             else
-            {
+            { 
                 updateDealerGUI(true);
                 GameOver(EndType.Win);
             }
@@ -377,6 +421,16 @@ namespace StupidBlackjackSln
             GameOver(EndType.Surrender);
         }
 
+        private void btnBuyInsurance_Click(object sender, EventArgs e)
+        {
+            player1.makeInsuranceBet();
+            insuranceFlag = false;
+        }
+
+        private void btnSkipInsurance_Click(object sender, EventArgs e)
+        {
+            insuranceFlag = false;
+        }
     }
 
     public enum EndType
