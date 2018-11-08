@@ -60,9 +60,7 @@ namespace StupidBlackjackSln
             txtbxBetAmount.Visible = true;
             txtbxBetAmount.Select();
 
-            btnHit.Enabled = false;
-            btnStand.Enabled = false;
-            btnSurrender.Enabled = false;
+            disableControls();
         }
 
         /// <summary>
@@ -137,11 +135,7 @@ namespace StupidBlackjackSln
                     }
                     else
                     {
-                        // enable player options
-                        btnHit.Enabled = true;
-                        btnStand.Enabled = true;
-                        btnSurrender.Enabled = true;
-                     
+                        enableControls();
                     }
                 }
             }
@@ -251,13 +245,25 @@ namespace StupidBlackjackSln
             }
         }
 
-        //Dealer stuff below here
 
-        private void btnStand_Click(object sender, EventArgs e)
+        private void disableControls()
         {
-            btnHit.Enabled = false; // temporarily disable buttons during dealer's turn
+            // temporarily disable buttons during dealer's turn
+            btnHit.Enabled = false;
             btnStand.Enabled = false;
             btnSurrender.Enabled = false;
+        }
+
+        private void enableControls()
+        {
+            // enable player options
+            btnHit.Enabled = true;
+            btnStand.Enabled = true;
+            btnSurrender.Enabled = true;
+        }
+        private void btnStand_Click(object sender, EventArgs e)
+        {
+            disableControls(); // temporarily disable buttons during dealer's turn
             dealerTurn();
         }
 
