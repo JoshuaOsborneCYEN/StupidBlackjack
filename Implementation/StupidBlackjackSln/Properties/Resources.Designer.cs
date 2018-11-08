@@ -481,12 +481,39 @@ namespace StupidBlackjackSln.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream card_flip {
+            get {
+                return ResourceManager.GetStream("card_flip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap cardbackred {
             get {
                 object obj = ResourceManager.GetObject("cardbackred", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream chips {
+            get {
+                return ResourceManager.GetStream("chips", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream game_music {
+            get {
+                return ResourceManager.GetStream("game_music", resourceCulture);
             }
         }
         
@@ -651,6 +678,15 @@ namespace StupidBlackjackSln.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream lose_sound {
+            get {
+                return ResourceManager.GetStream("lose_sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap queen_of_clubs {
@@ -747,6 +783,15 @@ namespace StupidBlackjackSln.Properties {
             get {
                 object obj = ResourceManager.GetObject("table_texture", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream win_sound {
+            get {
+                return ResourceManager.GetStream("win_sound", resourceCulture);
             }
         }
     }
