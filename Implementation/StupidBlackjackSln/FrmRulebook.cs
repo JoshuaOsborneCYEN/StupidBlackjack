@@ -17,5 +17,5 @@ namespace StupidBlackjackSln {
     private void btnCloseWindow_Click(object sender, EventArgs e) {
       Close();
     }
-  }
+    }
 }

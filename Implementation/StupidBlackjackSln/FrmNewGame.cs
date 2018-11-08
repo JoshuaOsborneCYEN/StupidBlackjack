@@ -41,6 +41,8 @@ namespace StupidBlackjackSln
             deck = new Deck(FindBitmap);
             player1 = new BlackjackPlayer();
             dealer = new BlackjackPlayer();
+            // start music
+            AudioManagers.PlayMusic(Resources.game_music);
             // add listener
             player1.scoreUpdated += p_ScoreUpdated;
             // add betting money
@@ -70,6 +72,7 @@ namespace StupidBlackjackSln
         /// </summary>
         private async void finishBetting()
         {
+            AudioManagers.PlaySoundEffect(Resources.chips);
             int betAmount;
             if(int.TryParse(txtbxBetAmount.Text, out betAmount))
             {
@@ -183,6 +186,7 @@ namespace StupidBlackjackSln
         private void btnHit_Click(object sender, EventArgs e)
         {
             btnSurrender.Enabled = false;
+            AudioManagers.PlaySoundEffect(Resources.card_flip);
             player1.giveCard(deck.dealCard());
             updateGUI();
         }
@@ -247,6 +251,7 @@ namespace StupidBlackjackSln
             {
                 lblHandValue.Text = "Bust!";
                 updateGUI();
+                AudioManagers.PlaySoundEffect(Resources.lose_sound);
                 GameOver(EndType.Lose);
             }
         }
@@ -277,6 +282,7 @@ namespace StupidBlackjackSln
             {
                 await PutTaskDelay(rnd.Next(1000, 3000));
                 dealer.giveCard(deck.dealCard());
+                AudioManagers.PlaySoundEffect(Resources.card_flip);
                 updateDealerGUI(true);
             }
             //decide how game ends based on final scores
@@ -284,6 +290,7 @@ namespace StupidBlackjackSln
             {
                 lblDealerScore.Text = "BUSTED";
                 lblPlayerScore.Text = "YOU WIN";
+                AudioManagers.PlaySoundEffect(Resources.win_sound);
                 GameOver(EndType.Win);
             }
             else if (dealer.Score == player1.Score)
@@ -295,11 +302,13 @@ namespace StupidBlackjackSln
             else if(dealer.Score < player1.Score)
             {
                 lblPlayerScore.Text = "YOU WIN";
+                AudioManagers.PlaySoundEffect(Resources.win_sound);
                 GameOver(EndType.Win);
             }
             else
             {
                 lblPlayerScore.Text = "YOU LOSE";
+                AudioManagers.PlaySoundEffect(Resources.lose_sound);
                 GameOver(EndType.Lose);
             }
         }

@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\BlackjackPlayer.cs" />
+    <Compile Include="Code\AudioManagers.cs" />
     <Compile Include="FrmTitle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -307,6 +308,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cardbackred.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\card_flip.wav" />
+    <Content Include="Resources\chips.wav" />
+    <Content Include="Resources\game_music.wav" />
+    <Content Include="Resources\lose_sound.wav" />
+    <Content Include="Resources\win_sound.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
