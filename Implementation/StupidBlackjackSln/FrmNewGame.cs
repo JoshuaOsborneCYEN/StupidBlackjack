@@ -21,15 +21,17 @@ namespace StupidBlackjackSln
         private PictureBox[] picDealerCards;
         private bool insuranceFlag = false;
         private bool isGameEnded = true;
+        private int NUM_CARDS = 7;
         
         public event EventHandler quitGame;
 
         public FrmNewGame()
         {
             InitializeComponent();
-            picPlayerCards = new PictureBox[5];
-            picDealerCards = new PictureBox[5];
-            for (int i = 0; i < 5; i++)
+            //NUM_CARDS = 7;
+            picPlayerCards = new PictureBox[NUM_CARDS];
+            picDealerCards = new PictureBox[NUM_CARDS];
+            for (int i = 0; i < NUM_CARDS; i++)
             {
                 picPlayerCards[i] = Controls.Find("picPlayerCard" + (i + 1).ToString(), true)[0] as PictureBox;
                 picDealerCards[i] = Controls.Find("picDealerCard" + (i + 1).ToString(), true)[0] as PictureBox;
