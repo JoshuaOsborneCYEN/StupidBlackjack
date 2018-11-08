@@ -20,6 +20,7 @@ namespace StupidBlackjackSln
         private PictureBox[] picPlayerCards;
         private PictureBox[] picDealerCards;
         private bool insuranceFlag = false;
+        private bool isGameEnded = true;
         
         public event EventHandler quitGame;
 
@@ -73,6 +74,7 @@ namespace StupidBlackjackSln
             {
                 if(player1.canMakeBet(betAmount))
                 {
+                    isGameEnded = false;
                     player1.makeBet(betAmount);
 
                     //basic setup
@@ -253,6 +255,7 @@ namespace StupidBlackjackSln
             // temporarily disable buttons during dealer's turn
             btnHit.Enabled = false;
             btnStand.Enabled = false;
+            btnDoubleDown.Enabled = false;
             btnSurrender.Enabled = false;
         }
 
@@ -261,6 +264,7 @@ namespace StupidBlackjackSln
             // enable player options
             btnHit.Enabled = true;
             btnStand.Enabled = true;
+            btnDoubleDown.Enabled = true;
             btnSurrender.Enabled = true;
         }
         private void btnStand_Click(object sender, EventArgs e)
@@ -361,7 +365,7 @@ namespace StupidBlackjackSln
         /// <param name="win">Enum for end game type (Win, Tie, Surrender, Lose)</param>
         private void GameOver(EndType win)
         {
-            
+            isGameEnded = true;
             if (win == EndType.Win) // 0
             {
                 player1.winBet();
@@ -438,6 +442,21 @@ namespace StupidBlackjackSln
         private void btnSkipInsurance_Click(object sender, EventArgs e)
         {
             insuranceFlag = false;
+        }
+
+        private void btnDoubleDown_Click(object sender, EventArgs e)
+        {
+            if (player1.canDoubleDownBet())
+            {
+                player1.doubleDownBet();
+                player1.giveCard(deck.dealCard());
+                updateGUI();
+                if (!isGameEnded)
+                {
+                    disableControls();
+                    dealerTurn();
+                }
+            }
         }
     }
 

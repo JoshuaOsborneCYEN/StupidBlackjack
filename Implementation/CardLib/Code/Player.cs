@@ -74,7 +74,11 @@ namespace StupidBlackjackSln.Code
             if (canMakeBet(bet))
             {
                 Money = Money - bet;
-                Bet = bet;
+                Bet = Bet + bet;
+            }
+            else
+            {
+                throw new ArgumentException("Bet was not valid", "bet");
             }
         }
 
@@ -83,6 +87,7 @@ namespace StupidBlackjackSln.Code
             Money = Money + 2*Bet;
             Bet = 0;
         }
+
         public void tieBet()
         {
             Money = Money + Bet;

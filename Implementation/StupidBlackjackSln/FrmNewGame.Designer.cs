@@ -51,6 +51,7 @@
             this.btnBuyInsurance = new System.Windows.Forms.Button();
             this.btnSkipInsurance = new System.Windows.Forms.Button();
             this.lblInsurance = new System.Windows.Forms.Label();
+            this.btnDoubleDown = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerCard3)).BeginInit();
@@ -67,7 +68,7 @@
             // 
             this.picPlayerCard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPlayerCard1.Location = new System.Drawing.Point(149, 298);
-            this.picPlayerCard1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picPlayerCard1.Margin = new System.Windows.Forms.Padding(4);
             this.picPlayerCard1.Name = "picPlayerCard1";
             this.picPlayerCard1.Size = new System.Drawing.Size(141, 177);
             this.picPlayerCard1.TabIndex = 0;
@@ -77,7 +78,7 @@
             // 
             this.picPlayerCard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPlayerCard2.Location = new System.Drawing.Point(339, 298);
-            this.picPlayerCard2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picPlayerCard2.Margin = new System.Windows.Forms.Padding(4);
             this.picPlayerCard2.Name = "picPlayerCard2";
             this.picPlayerCard2.Size = new System.Drawing.Size(141, 177);
             this.picPlayerCard2.TabIndex = 1;
@@ -87,7 +88,7 @@
             // 
             this.picPlayerCard3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPlayerCard3.Location = new System.Drawing.Point(528, 298);
-            this.picPlayerCard3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picPlayerCard3.Margin = new System.Windows.Forms.Padding(4);
             this.picPlayerCard3.Name = "picPlayerCard3";
             this.picPlayerCard3.Size = new System.Drawing.Size(141, 177);
             this.picPlayerCard3.TabIndex = 2;
@@ -97,7 +98,7 @@
             // 
             this.picPlayerCard4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPlayerCard4.Location = new System.Drawing.Point(717, 298);
-            this.picPlayerCard4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picPlayerCard4.Margin = new System.Windows.Forms.Padding(4);
             this.picPlayerCard4.Name = "picPlayerCard4";
             this.picPlayerCard4.Size = new System.Drawing.Size(141, 177);
             this.picPlayerCard4.TabIndex = 3;
@@ -107,7 +108,7 @@
             // 
             this.picPlayerCard5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPlayerCard5.Location = new System.Drawing.Point(907, 298);
-            this.picPlayerCard5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picPlayerCard5.Margin = new System.Windows.Forms.Padding(4);
             this.picPlayerCard5.Name = "picPlayerCard5";
             this.picPlayerCard5.Size = new System.Drawing.Size(141, 177);
             this.picPlayerCard5.TabIndex = 4;
@@ -116,8 +117,8 @@
             // btnHit
             // 
             this.btnHit.AutoSize = true;
-            this.btnHit.Location = new System.Drawing.Point(149, 228);
-            this.btnHit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHit.Location = new System.Drawing.Point(149, 192);
+            this.btnHit.Margin = new System.Windows.Forms.Padding(4);
             this.btnHit.Name = "btnHit";
             this.btnHit.Size = new System.Drawing.Size(61, 28);
             this.btnHit.TabIndex = 5;
@@ -128,8 +129,8 @@
             // btnStand
             // 
             this.btnStand.AutoSize = true;
-            this.btnStand.Location = new System.Drawing.Point(219, 228);
-            this.btnStand.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStand.Location = new System.Drawing.Point(219, 192);
+            this.btnStand.Margin = new System.Windows.Forms.Padding(4);
             this.btnStand.Name = "btnStand";
             this.btnStand.Size = new System.Drawing.Size(71, 28);
             this.btnStand.TabIndex = 6;
@@ -237,7 +238,7 @@
             // 
             this.picDealerCard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picDealerCard1.Location = new System.Drawing.Point(613, 26);
-            this.picDealerCard1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picDealerCard1.Margin = new System.Windows.Forms.Padding(4);
             this.picDealerCard1.Name = "picDealerCard1";
             this.picDealerCard1.Size = new System.Drawing.Size(95, 126);
             this.picDealerCard1.TabIndex = 15;
@@ -247,7 +248,7 @@
             // 
             this.picDealerCard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picDealerCard2.Location = new System.Drawing.Point(648, 50);
-            this.picDealerCard2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picDealerCard2.Margin = new System.Windows.Forms.Padding(4);
             this.picDealerCard2.Name = "picDealerCard2";
             this.picDealerCard2.Size = new System.Drawing.Size(95, 126);
             this.picDealerCard2.TabIndex = 16;
@@ -257,7 +258,7 @@
             // 
             this.picDealerCard3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picDealerCard3.Location = new System.Drawing.Point(680, 76);
-            this.picDealerCard3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picDealerCard3.Margin = new System.Windows.Forms.Padding(4);
             this.picDealerCard3.Name = "picDealerCard3";
             this.picDealerCard3.Size = new System.Drawing.Size(95, 126);
             this.picDealerCard3.TabIndex = 17;
@@ -267,7 +268,7 @@
             // 
             this.picDealerCard4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picDealerCard4.Location = new System.Drawing.Point(717, 100);
-            this.picDealerCard4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picDealerCard4.Margin = new System.Windows.Forms.Padding(4);
             this.picDealerCard4.Name = "picDealerCard4";
             this.picDealerCard4.Size = new System.Drawing.Size(95, 126);
             this.picDealerCard4.TabIndex = 18;
@@ -287,7 +288,7 @@
             // 
             this.picDealerCard5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picDealerCard5.Location = new System.Drawing.Point(751, 130);
-            this.picDealerCard5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picDealerCard5.Margin = new System.Windows.Forms.Padding(4);
             this.picDealerCard5.Name = "picDealerCard5";
             this.picDealerCard5.Size = new System.Drawing.Size(95, 126);
             this.picDealerCard5.TabIndex = 20;
@@ -310,7 +311,7 @@
             this.btnBlackJack.Enabled = false;
             this.btnBlackJack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBlackJack.Location = new System.Drawing.Point(9, 354);
-            this.btnBlackJack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBlackJack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBlackJack.Name = "btnBlackJack";
             this.btnBlackJack.Size = new System.Drawing.Size(156, 42);
             this.btnBlackJack.TabIndex = 22;
@@ -322,8 +323,8 @@
             // btnSurrender
             // 
             this.btnSurrender.AutoSize = true;
-            this.btnSurrender.Location = new System.Drawing.Point(149, 262);
-            this.btnSurrender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSurrender.Location = new System.Drawing.Point(149, 264);
+            this.btnSurrender.Margin = new System.Windows.Forms.Padding(4);
             this.btnSurrender.Name = "btnSurrender";
             this.btnSurrender.Size = new System.Drawing.Size(141, 28);
             this.btnSurrender.TabIndex = 23;
@@ -368,11 +369,24 @@
             this.lblInsurance.Text = "Insurance?";
             this.lblInsurance.Visible = false;
             // 
+            // btnDoubleDown
+            // 
+            this.btnDoubleDown.AutoSize = true;
+            this.btnDoubleDown.Location = new System.Drawing.Point(149, 228);
+            this.btnDoubleDown.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDoubleDown.Name = "btnDoubleDown";
+            this.btnDoubleDown.Size = new System.Drawing.Size(141, 28);
+            this.btnDoubleDown.TabIndex = 27;
+            this.btnDoubleDown.Text = "Double Down";
+            this.btnDoubleDown.UseVisualStyleBackColor = true;
+            this.btnDoubleDown.Click += new System.EventHandler(this.btnDoubleDown_Click);
+            // 
             // FrmNewGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnDoubleDown);
             this.Controls.Add(this.lblInsurance);
             this.Controls.Add(this.btnSkipInsurance);
             this.Controls.Add(this.btnBuyInsurance);
@@ -401,7 +415,7 @@
             this.Controls.Add(this.picPlayerCard3);
             this.Controls.Add(this.picPlayerCard2);
             this.Controls.Add(this.picPlayerCard1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmNewGame";
             this.Text = "FrmNewGame";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmNewGame_FormClosed);
@@ -452,5 +466,6 @@
         private System.Windows.Forms.Button btnBuyInsurance;
         private System.Windows.Forms.Button btnSkipInsurance;
         private System.Windows.Forms.Label lblInsurance;
+        private System.Windows.Forms.Button btnDoubleDown;
     }
 }

@@ -99,5 +99,18 @@ namespace StupidBlackjackSln.Code
             InsuranceBet = 0;
         }
 
+        public bool canDoubleDownBet()
+        {
+            int newBet = Bet;
+            return canMakeBet(newBet);
+        }
+
+        public void doubleDownBet()
+        {
+            int newBet = Bet;
+            makeBet(newBet);
+
+        }
+
     }
 }
