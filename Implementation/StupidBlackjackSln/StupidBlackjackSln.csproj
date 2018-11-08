@@ -314,6 +314,7 @@
     <Content Include="Resources\chips.wav" />
     <Content Include="Resources\game_music.wav" />
     <Content Include="Resources\lose_sound.wav" />
+    <Content Include="Resources\poker_table.pjg.jpg" />
     <Content Include="Resources\win_sound.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
