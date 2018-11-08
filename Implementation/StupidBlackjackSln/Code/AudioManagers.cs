@@ -11,26 +11,26 @@ namespace StupidBlackjackSln.Code
         private static System.Media.SoundPlayer effectsPlayer;
         private static System.Media.SoundPlayer musicPlayer;
 
-        public static void PlayMusic(System.IO.Stream file)
+        public static void PlayMusic(System.IO.Stream stream)
         {
             if(musicPlayer == null)
             {
                 musicPlayer = new System.Media.SoundPlayer();
             }
             musicPlayer.Stop();
-            musicPlayer.Stream = file;
+            musicPlayer.Stream = stream;
             musicPlayer.Load();
             musicPlayer.PlayLooping();
         }
 
-        public static void PlaySoundEffect(string file)
+        public static void PlaySoundEffect(System.IO.Stream stream)
         {
             if (effectsPlayer == null)
             {
                 effectsPlayer = new System.Media.SoundPlayer();
             }
             effectsPlayer.Stop();
-            effectsPlayer.SoundLocation = file;
+            effectsPlayer.Stream = stream;
             effectsPlayer.Load();
             effectsPlayer.Play();
         }

@@ -310,7 +310,11 @@
     <None Include="Resources\cardbackred.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\game_music.wav" />
+    <Content Include="Resources\card_flip.wav" />
+    <Content Include="Resources\chips.wav" />
+    <Content Include="Resources\game_music.wav" />
+    <Content Include="Resources\lose_sound.wav" />
+    <Content Include="Resources\win_sound.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
