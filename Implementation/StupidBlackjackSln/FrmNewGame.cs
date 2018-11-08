@@ -71,8 +71,10 @@ namespace StupidBlackjackSln
             int betAmount;
             if(int.TryParse(txtbxBetAmount.Text, out betAmount))
             {
-                if(player1.makeBet(betAmount))
+                if(player1.canMakeBet(betAmount))
                 {
+                    player1.makeBet(betAmount);
+
                     //basic setup
                     btnMakeBet.Enabled = false;
                     btnMakeBet.Visible = false;

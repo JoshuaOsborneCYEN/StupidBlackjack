@@ -79,14 +79,7 @@ namespace StupidBlackjackSln.Code
         public bool canMakeInsuranceBet()
         {
             int insuranceBet = Bet / 2;
-            if (Money - insuranceBet >= 0 && insuranceBet > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return canMakeBet(insuranceBet);
         }
 
         public void makeInsuranceBet()

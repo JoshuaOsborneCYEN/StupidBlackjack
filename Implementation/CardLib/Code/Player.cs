@@ -57,17 +57,24 @@ namespace StupidBlackjackSln.Code
             Money = initMoney;
         }
 
-        public bool makeBet(int bet)
+        public bool canMakeBet(int bet)
         {
-            if (Money - bet >= 0 && bet > 0)
+            if ((Money - bet) >= 0 && bet > 0)
             {
-                Money = Money - bet;
-                Bet = bet;
                 return true;
             }
             else
             {
                 return false;
+            }
+        }
+
+        public void makeBet(int bet)
+        {
+            if (canMakeBet(bet))
+            {
+                Money = Money - bet;
+                Bet = bet;
             }
         }
 
