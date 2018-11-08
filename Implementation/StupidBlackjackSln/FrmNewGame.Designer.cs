@@ -76,7 +76,7 @@
             // 
             this.btnHit.AutoSize = true;
             this.btnHit.Location = new System.Drawing.Point(24, 186);
-            this.btnHit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHit.Margin = new System.Windows.Forms.Padding(4);
             this.btnHit.Name = "btnHit";
             this.btnHit.Size = new System.Drawing.Size(61, 28);
             this.btnHit.TabIndex = 5;
@@ -88,7 +88,7 @@
             // 
             this.btnStand.AutoSize = true;
             this.btnStand.Location = new System.Drawing.Point(93, 186);
-            this.btnStand.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStand.Margin = new System.Windows.Forms.Padding(4);
             this.btnStand.Name = "btnStand";
             this.btnStand.Size = new System.Drawing.Size(71, 28);
             this.btnStand.TabIndex = 6;
@@ -228,7 +228,7 @@
             this.btnBlackJack.Enabled = false;
             this.btnBlackJack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBlackJack.Location = new System.Drawing.Point(9, 354);
-            this.btnBlackJack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBlackJack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBlackJack.Name = "btnBlackJack";
             this.btnBlackJack.Size = new System.Drawing.Size(156, 42);
             this.btnBlackJack.TabIndex = 22;
@@ -241,7 +241,7 @@
             // 
             this.btnSurrender.AutoSize = true;
             this.btnSurrender.Location = new System.Drawing.Point(24, 257);
-            this.btnSurrender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSurrender.Margin = new System.Windows.Forms.Padding(4);
             this.btnSurrender.Name = "btnSurrender";
             this.btnSurrender.Size = new System.Drawing.Size(141, 28);
             this.btnSurrender.TabIndex = 23;
@@ -294,7 +294,7 @@
             // 
             this.btnDoubleDown.AutoSize = true;
             this.btnDoubleDown.Location = new System.Drawing.Point(24, 222);
-            this.btnDoubleDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDoubleDown.Margin = new System.Windows.Forms.Padding(4);
             this.btnDoubleDown.Name = "btnDoubleDown";
             this.btnDoubleDown.Size = new System.Drawing.Size(141, 28);
             this.btnDoubleDown.TabIndex = 27;
@@ -460,7 +460,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::StupidBlackjackSln.Properties.Resources.felt_table;
+            this.BackgroundImage = global::StupidBlackjackSln.Properties.Resources.poker_table_pjg;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.picPlayerCard7);
             this.Controls.Add(this.picPlayerCard6);
@@ -495,7 +495,7 @@
             this.Controls.Add(this.picPlayerCard3);
             this.Controls.Add(this.picPlayerCard2);
             this.Controls.Add(this.picPlayerCard1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmNewGame";
             this.Text = "FrmNewGame";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmNewGame_FormClosed);

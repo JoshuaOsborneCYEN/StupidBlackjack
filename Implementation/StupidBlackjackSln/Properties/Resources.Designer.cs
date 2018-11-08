@@ -509,16 +509,6 @@ namespace StupidBlackjackSln.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap felt_table {
-            get {
-                object obj = ResourceManager.GetObject("felt_table", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream game_music {
@@ -693,6 +683,16 @@ namespace StupidBlackjackSln.Properties {
         internal static System.IO.UnmanagedMemoryStream lose_sound {
             get {
                 return ResourceManager.GetStream("lose_sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap poker_table_pjg {
+            get {
+                object obj = ResourceManager.GetObject("poker_table_pjg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
