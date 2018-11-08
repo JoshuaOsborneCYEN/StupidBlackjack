@@ -83,7 +83,7 @@ namespace StupidBlackjackSln
                     player1.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
                     dealer.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
                     //player1.giveHand(new List<Card>() { deck.dealCard("ace"), deck.dealCard("jack") });
-                    //dealer.giveHand(new List<Card>() { deck.dealCard("ace"), deck.dealCard("jack") });
+                    //dealer.giveHand(new List<Card>() { deck.dealCard("ace"), deck.dealCard("7") });
 
                     updateGUI();
                     updateDealerGUI(false);
@@ -111,6 +111,24 @@ namespace StupidBlackjackSln
 
 
                     //check BlackJacks
+                    if (checkBlackjack(dealer))
+                    {
+                        updateDealerGUI(true);
+                        lblDealerScore.Text = "BLACKJACK!";
+                        if (player1.InsuranceBet > 0)
+                        {
+                            player1.winInsuranceBet();
+                        }
+                        GameOver(EndType.Lose);
+                    }
+                    else
+                    {
+                        if (player1.InsuranceBet > 0)
+                        {
+                            player1.loseInsuranceBet();
+                        }
+                    }
+
                     if (checkBlackjack(player1))
                     {
                         //give player oppurtunity to declare own blackjack
@@ -154,10 +172,6 @@ namespace StupidBlackjackSln
             lblPlayerScore.Text = player1.Score.ToString();
             lblMoney.Text = player1.Money.ToString();
             lblBetPool.Text = player1.Bet.ToString();
-            if (player1.InsuranceBet > 0)
-            {
-                lblBetPool.Text = lblBetPool.Text + " (INSURED)";
-            }
             
         }
 
@@ -253,19 +267,6 @@ namespace StupidBlackjackSln
             await PutTaskDelay(500);
             updateDealerGUI(true);
 
-            if (checkBlackjack(dealer))
-            {
-                if (player1.InsuranceBet > 0)
-                {
-                    player1.winInsuranceBet();
-                }
-                updateDealerGUI(true);
-                lblDealerScore.Text = "BLACKJACK!";
-                GameOver(EndType.Lose);
-                return;
-            }
-            
-
             //hit when score below 17
             while (dealer.Score < 17)
             {
@@ -346,10 +347,6 @@ namespace StupidBlackjackSln
         /// <param name="win"></param>
         private void GameOver(EndType win)
         {
-            if (player1.InsuranceBet > 0)
-            {
-                player1.loseInsuranceBet();
-            }
             
             if (win == EndType.Win) // 0
             {
