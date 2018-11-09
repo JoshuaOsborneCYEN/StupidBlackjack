@@ -395,11 +395,17 @@ namespace StupidBlackjackSln
                 player1.winstreak = 0;
                 lblHandValue.Text = "Surrender";
             }
-            else // 2
+            else // 2 (lose)
             {
                 player1.loseBet();
                 player1.winstreak = 0;
                 lblHandValue.Text = "Loser";
+                if(player1.Money == 0)
+                {
+                    MessageBox.Show("You're all out of money");
+                    this.Close();
+                    return;
+                }
             }
             lblWinstreak.Text = "Winstreak: " + player1.winstreak.ToString();
             updateGUI();
