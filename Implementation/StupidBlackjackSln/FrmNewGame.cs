@@ -224,6 +224,7 @@ namespace StupidBlackjackSln
         /// </summary>
         private void ResetGame()
         {
+            deck = null; // improves garbage collection
             deck = new Deck(FindBitmap);
             startBetting();
 
